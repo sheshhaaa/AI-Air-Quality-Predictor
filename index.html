@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Air Quality Predictor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">🌍</div>
+
+        <h1>AI Air Quality Predictor</h1>
+
+        <p class="subtitle">
+            Check air quality, predict pollutants and get
+            personalized health precautions.
+        </p>
+
+    </header>
+
+
+
+    <!-- CITY SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="city"
+            placeholder="Enter city name"
+        >
+
+        <button id="checkButton">
+            Check AQI
+        </button>
+
+    </div>
+
+
+
+    <!-- LOADING -->
+
+    <div id="loading" class="hidden">
+        Checking air quality...
+    </div>
+
+
+
+    <!-- ERROR -->
+
+    <div
+        id="error"
+        class="error hidden"
+    ></div>
+
+
+
+    <!-- RESULTS -->
+
+    <main
+        id="result"
+        class="hidden"
+    >
+
+
+        <!-- CITY -->
+
+        <h2 id="cityName"></h2>
+
+
+
+        <!-- AQI CARD -->
+
+        <div class="aqi-card">
+
+            <p>Air Quality Index</p>
+
+            <div id="aqi">
+                --
+            </div>
+
+            <div id="aqiStatus">
+                --
+            </div>
+
+        </div>
+
+
+
+        <!-- POLLUTANT LEVELS -->
+
+        <h2 class="section-title">
+            Pollutant Levels
+        </h2>
+
+
+        <div class="pollutants">
+
+
+            <div class="pollutant">
+
+                <h3>PM2.5</h3>
+
+                <p id="pm25">
+                    --
+                </p>
+
+                <span>
+                    µg/m³
+                </span>
+
+            </div>
+
+
+
+            <div class="pollutant">
+
+                <h3>PM10</h3>
+
+                <p id="pm10">
+                    --
+                </p>
+
+                <span>
+                    µg/m³
+                </span>
+
+            </div>
+
+
+
+            <div class="pollutant">
+
+                <h3>CO</h3>
+
+                <p id="co">
+                    --
+                </p>
+
+                <span>
+                    µg/m³
+                </span>
+
+            </div>
+
+
+
+            <div class="pollutant">
+
+                <h3>NO₂</h3>
+
+                <p id="no2">
+                    --
+                </p>
+
+                <span>
+                    µg/m³
+                </span>
+
+            </div>
+
+
+
+            <div class="pollutant">
+
+                <h3>SO₂</h3>
+
+                <p id="so2">
+                    --
+                </p>
+
+                <span>
+                    µg/m³
+                </span>
+
+            </div>
+
+
+
+            <div class="pollutant">
+
+                <h3>O₃</h3>
+
+                <p id="ozone">
+                    --
+                </p>
+
+                <span>
+                    µg/m³
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- BEST TIME -->
+
+        <div class="feature-card">
+
+            <h2>
+                🕐 Best Time to Go Outside
+            </h2>
+
+            <p class="feature-description">
+                Find the period with better predicted air
+                quality for outdoor activities.
+            </p>
+
+            <div id="bestTime">
+                --
+            </div>
+
+        </div>
+
+
+
+        <!-- WHAT-IF SIMULATOR -->
+
+        <div class="feature-card">
+
+            <h2>
+                🔮 What-If Simulator
+            </h2>
+
+            <p class="feature-description">
+                Change the PM2.5 level and see how it
+                could affect the predicted AQI.
+            </p>
+
+
+            <div class="simulator">
+
+
+                <label for="pm25Input">
+                    Simulated PM2.5
+                </label>
+
+
+                <input
+                    type="number"
+                    id="pm25Input"
+                    min="0"
+                    step="0.1"
+                    placeholder="Enter PM2.5 value"
+                >
+
+
+                <button id="simulateButton">
+                    Simulate AQI
+                </button>
+
+
+            </div>
+
+
+            <div
+                id="simulationResult"
+                class="simulation-result hidden"
+            >
+                --
+            </div>
+
+        </div>
+
+
+
+        <!-- AI ADVICE -->
+
+        <div class="ai-card">
+
+            <h2>
+                🤖 AI Air Quality Advice
+            </h2>
+
+            <div id="explanation">
+                --
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        AI Air Quality Predictor
+
+    </footer>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

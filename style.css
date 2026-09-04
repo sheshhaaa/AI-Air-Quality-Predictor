@@ -1,0 +1,568 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   BODY / EARTH BACKGROUND
+   ========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.70)
+        ),
+        url("../earth-background.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: white;
+    padding: 30px 15px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+    color: #c9e2e5;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 400px;
+
+    padding: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+
+    font-size: 16px;
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.95);
+    color: #111;
+}
+
+.search-box input::placeholder {
+    color: #777;
+}
+
+.search-box button {
+    padding: 15px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #00c853;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #00a844;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   LOADING
+   ========================= */
+
+.hidden {
+    display: none;
+}
+
+#loading {
+    color: #80cbc4;
+    margin: 15px;
+    font-size: 16px;
+}
+
+
+/* =========================
+   ERROR
+   ========================= */
+
+.error {
+    background: rgba(139, 30, 30, 0.90);
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin: 15px auto;
+
+    max-width: 600px;
+}
+
+
+/* =========================
+   CITY NAME
+   ========================= */
+
+#cityName {
+    font-size: 32px;
+
+    margin: 25px 0 20px;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================
+   AQI CARD
+   ========================= */
+
+.aqi-card {
+    background: rgba(0, 0, 0, 0.45);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.aqi-card p {
+    font-size: 18px;
+    color: #d5eeee;
+}
+
+#aqi {
+    font-size: 75px;
+
+    font-weight: bold;
+
+    margin: 10px;
+
+    color: #00e676;
+
+    text-shadow:
+        0 0 20px rgba(0, 230, 118, 0.5);
+}
+
+#aqiStatus {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   SECTION TITLE
+   ========================= */
+
+.section-title {
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================
+   POLLUTANTS
+   ========================= */
+
+.pollutants {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.pollutant {
+    background: rgba(0, 0, 0, 0.45);
+
+    padding: 25px 10px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+    transition: 0.3s;
+}
+
+.pollutant:hover {
+    transform: translateY(-5px);
+
+    background: rgba(0, 0, 0, 0.60);
+
+    border-color:
+        rgba(0, 230, 118, 0.4);
+}
+
+.pollutant h3 {
+    color: #b2dfdb;
+
+    margin-bottom: 10px;
+}
+
+.pollutant p {
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.pollutant span {
+    color: #b7d5d8;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FEATURE CARDS
+   ========================= */
+
+.feature-card {
+    background: rgba(0, 0, 0, 0.50);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    margin-bottom: 30px;
+
+    text-align: left;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card h2 {
+    color: #69f0ae;
+
+    margin-bottom: 15px;
+}
+
+.feature-description {
+    color: #c9e2e5;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   BEST TIME
+   ========================= */
+
+#bestTime {
+    background: rgba(0, 200, 83, 0.12);
+
+    border: 1px solid rgba(0, 230, 118, 0.25);
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    color: #ecffff;
+
+    line-height: 1.7;
+}
+
+#bestTime strong {
+    color: #69f0ae;
+
+    font-size: 24px;
+}
+
+
+/* =========================
+   WHAT-IF SIMULATOR
+   ========================= */
+
+.simulator {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.simulator label {
+    color: #d5eeee;
+
+    font-weight: bold;
+}
+
+.simulator input {
+    width: 220px;
+
+    padding: 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #111;
+}
+
+.simulator button {
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #00c853;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.simulator button:hover {
+    background: #00a844;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SIMULATION RESULT
+   ========================= */
+
+.simulation-result {
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    line-height: 2;
+
+    color: #ecffff;
+}
+
+.simulation-result strong {
+    color: #69f0ae;
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   AI ADVICE
+   ========================= */
+
+.ai-card {
+    background: rgba(0, 0, 0, 0.50);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    margin-bottom: 30px;
+
+    text-align: left;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.ai-card h2 {
+    color: #69f0ae;
+
+    margin-bottom: 20px;
+}
+
+#explanation {
+    white-space: pre-line;
+
+    line-height: 1.8;
+
+    color: #ecffff;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    margin-top: 40px;
+
+    color: #9fc5c8;
+
+    font-size: 14px;
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px 10px;
+
+        background-position: center;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .pollutants {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #aqi {
+        font-size: 60px;
+    }
+
+    .aqi-card {
+        padding: 25px 15px;
+    }
+
+    .feature-card {
+        padding: 25px 20px;
+    }
+
+    .ai-card {
+        padding: 25px 20px;
+    }
+
+    .simulator {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .simulator input {
+        width: 100%;
+    }
+
+    .simulator button {
+        width: 100%;
+    }
+}
